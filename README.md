@@ -10,12 +10,15 @@ Due to time constraints (we had about 4 days to complete the challenge) we only 
 * **(2)** - Estimation of container capacity using Depth data (from 1 PoV).
 
 For (1), we compute and normalize the MFCCs sequence from audio data and use a simple 3-layer NN with Softmax outputs:
+
 <img src="imgs/20200922-132913.png" width="250"/>
 
 For (2), we first try to find a frame with a good ROI which contains the object in the Depth video, using contours candidates and filtering by distance.
+
 <img src="imgs/20200922-132352.png" width="800"/>
 
 Then, we feed the ROI along with its normalized dimensions (relative to original image dims) as inputs to a slightly larger network and perform regression:
+
 <img src="imgs/20200922-132932.png" width="300"/>
 
 More detailed information can be found in the PDF of our presentation in this repo.
